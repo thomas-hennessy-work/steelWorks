@@ -1,4 +1,4 @@
-from flas import Flask
+from flask import Flask
 #Used to to link the database layer to the application
 from flask_sqlalchemy import SQLAlchemy
 
@@ -7,8 +7,8 @@ from os import getenv
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = getenv('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DB_URI')
 
 db = SQLAlchemy(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DB_URI')
 from application import routes
