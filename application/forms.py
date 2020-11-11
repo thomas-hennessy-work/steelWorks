@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, SubmitField
-from wtforms import DataRequired
+from wtforms.validators import DataRequired
 
 from application.models import Song, Review
 
@@ -8,15 +8,15 @@ from application.models import Song, Review
 class SongForm(FlaskForm):
     title = StringField('Song title',
         validators=[DataRequired()])
-    group = StringField('Group'),
+    group = StringField('Group',
         validators=[DataRequired()])
-    length = IntegerField('Song length (s)')
+    length = IntegerField('Song length (s)',
         validators=[DataRequired()])
     youTube = StringField('URL to song on YouTube')
     submit = SubmitField('Add song')
 
 class ReviewForm(FlaskForm):
-    review_text = StringField('Review'),
+    review_text = StringField('Review',
         validators=[DataRequired()])
     score_total = IntegerField('Total score')
     vocals = IntegerField('Vocals score')
