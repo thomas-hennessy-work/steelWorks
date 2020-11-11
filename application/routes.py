@@ -26,6 +26,6 @@ def addSong():
         return redirect(url_for('index'))
     return render_template('add-song.html', form=form)
 
-@app.route('/song-details/<int:song_id>')
-def viewSong():
+@app.route('/song-details/<int:songID>', methods=['GET', 'POST'])
+def viewSong(songID):
    return render_template('song-details.html')

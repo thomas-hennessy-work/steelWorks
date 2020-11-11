@@ -2,11 +2,11 @@
 {% block body_content %}
 
 {% for song in allSongs %}
-	{{ song.title }} - {{ song.group }}
+{{ song.title }} - {{ song.group }}
 	<br>
-	<form action='{{ url_for('song-details', song_id=song.song_id) }}'>
-		<button>View information</button>
-	</form>
+	<form action='{{ url_for('viewSong', songID=song.song_id) }}'>
+                <button>View information</button>
+        </form>
 {% endfor %}
 
 {% endblock body_content %}
