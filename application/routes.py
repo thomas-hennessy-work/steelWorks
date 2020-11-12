@@ -77,3 +77,12 @@ def deleteSong(songID):
     db.session.delete(song_to_delete)
     db.session.commit()
     return redirect(url_for('index'))
+
+@app.route('/delete-review/<int:reviewID>')
+def deleteReview(reviewID):
+    review_to_delete = Review.query.get(reviewID)
+    songID = review_to_delete.song_id
+    print(reviewID)
+    db.session.delete(review_to_delete)
+    db.session.commit()
+    return redirect(url_for('viewSong', songID=songID))

@@ -1,8 +1,12 @@
 {% extends 'layout.html' %}
 {% block body_content %}
 
+<br>
+<br>
+
 <a href='{{ url_for('editSong', songID=song_viewed.song_id) }}'>Edit song</a>
 <a href='{{ url_for('deleteSong', songID=song_viewed.song_id) }}'>Delete song</a>
+<br>
 <br>
 <a href='{{ url_for('addReview', songID=song_viewed.song_id) }}'>Add a review</a>
 
@@ -20,18 +24,24 @@
 	{{ review.score_total }}
 
 	<br>
+	<br>
 
-	Moshability: {{ review.mosh }}
-	Vocals: {{ review.vocals }}
-	Riff: {{ review.riff }}
-	Bass: {{ review.bass }}
+	Moshability: {{ review.mosh }}<br>
+	Vocals: {{ review.vocals }}<br>
+	Riff: {{ review.riff }}<br>
+	Bass: {{ review.bass }}<br>
 	Beat: {{ review.beat }}
 
+	<br>
 	<br>
 
 	Comments:
 	<br>
 	{{ review.review_text }}
+	<br>
+	<form action='{{ url_for('deleteReview', reviewID=review.review_id) }}'>
+		<button>Delete Review</button>
+	</form>
 {% endfor %}
 
 {% endblock body_content %}
