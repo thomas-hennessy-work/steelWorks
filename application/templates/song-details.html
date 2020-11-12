@@ -1,6 +1,11 @@
 {% extends 'layout.html' %}
 {% block body_content %}
 
-{{ song_id }}
+<h2>{{ song_viewed.title }} - {{ song_viewed.group }}</h2>
+<br>
+<p>Song length - {{ song_viewed.length }} </p>
+<br>
+<iframe src={{ song_viewed.yt_link }}></iframe>
+
 
 {% endblock body_content %}

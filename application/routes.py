@@ -28,4 +28,5 @@ def addSong():
 
 @app.route('/song-details/<int:songID>', methods=['GET', 'POST'])
 def viewSong(songID):
-   return render_template('song-details.html')
+    song_viewed = Song.query.get(songID)
+    return render_template('song-details.html', song_viewed=song_viewed)
