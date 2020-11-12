@@ -2,7 +2,9 @@
 {% block body_content %}
 
 <a href='{{ url_for('editSong', songID=song_viewed.song_id) }}'>Edit song</a>
-<a href='{{ url_for('deleteSong', songID=song_viewed.song_id) }}'>Delete song</>
+<a href='{{ url_for('deleteSong', songID=song_viewed.song_id) }}'>Delete song</a>
+<br>
+<a href='{{ url_for('addReview', songID=song_viewed.song_id) }}'>Add a review</a>
 
 <h2>{{ song_viewed.title }} - {{ song_viewed.group }}</h2>
 <br>

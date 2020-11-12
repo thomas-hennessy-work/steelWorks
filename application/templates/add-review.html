@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+{% block body_content %}
+
+<h2>Add a review</h2>
+
+<form method='POST' action=''>
+	{{ form.hidden_tag() }}
+
+	{{ form.review_text.label }} {{ form.review_text }}
+	{% if form.review_text %}
+		{% for error in form.review_text.errors %}
+			<br>
+			{{ error }}
+		{% endfor %}
+	{% endif %}
+
+	<br>
+
+	{{ form.score_total.label }} {{ form.score_total }}
+        {% if form.score_total %}
+                {% for error in form.score_total.errors %}
+                        <br>
+                        {{ error }}
+                {% endfor %}
+        {% endif %}
+
+	<br>
+
+	{{ form.mosh.label }} {{ form.mosh }}
+        {% if form.mosh %}
+                {% for error in form.mosh.errors %}
+                        <br>
+                        {{ error }}
+                {% endfor %}
+        {% endif %}
+
+	<br>
+
+	{{ form.vocals.label }} {{ form.vocals }}
+        {% if form.vocals %}
+                {% for error in form.vocals.errors %}
+                        <br>
+                        {{ error }}
+                {% endfor %}
+        {% endif %}
+
+	<br>
+
+	{{ form.riff.label }} {{ form.riff }}
+        {% if form.riff %}
+                {% for error in form.riff.errors %}
+                        <br>
+                        {{ error }}
+                {% endfor %}
+        {% endif %}
+
+        <br>
+
+	{{ form.bass.label }} {{ form.bass }}
+        {% if form.bass %}
+                {% for error in form.bass.errors %}
+                        <br>
+                        {{ error }}
+                {% endfor %}
+        {% endif %}
+
+        <br>
+
+	{{ form.beat.label }} {{ form.beat }}
+        {% if form.beat %}
+                {% for error in form.beat.errors %}
+                        <br>
+                        {{ error }}
+                {% endfor %}
+        {% endif %}
+
+        <br>
+
+	{{ form.submit }}
+</form>
+
+{% endblock body_content %}

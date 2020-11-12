@@ -26,6 +26,23 @@ def addSong():
         return redirect(url_for('index'))
     return render_template('add-song.html', form=form)
 
+@app.route('/add-review/<int:songID>', methods=['GET', 'POST'])
+def addReview(songID):
+    form = ReviewForm()
+    if form.validate_on_submit():
+        new_review = Review(song_id=songID,
+                review_text=form.review_text.data,
+                score_total=form.score_total.data,
+                mosh=form.mosh.data,
+                vocals=form.vocals.data,
+                riff=form.riff.data,
+                bass=form.bass.data,
+                beat=form.beat.data)
+        db.session.add(new_review)
+        db.session.commit()
+        return redirect(url_for('viewSong', songID=songID))
+    return render_template('add-review.html', form=form, songID=songID)
+
 @app.route('/song-details/<int:songID>')
 def viewSong(songID):
     song_viewed = Song.query.get(songID)

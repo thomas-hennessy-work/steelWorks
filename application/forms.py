@@ -19,7 +19,9 @@ class ReviewForm(FlaskForm):
     review_text = StringField('Review',
         validators=[DataRequired()])
     score_total = IntegerField('Total score')
+    mosh = IntegerField('Moshability score')
     vocals = IntegerField('Vocals score')
     riff = IntegerField('Riff score')
     bass = IntegerField('Bass score')
     beat = IntegerField('Beat score')
+    submit = SubmitField('Add review')
