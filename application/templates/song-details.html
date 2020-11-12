@@ -13,4 +13,25 @@
 <iframe src={{ song_viewed.yt_link }}></iframe>
 
 
+<h3>Reviews</h3>
+
+{% for review in song_reviews %}
+	Total score:
+	{{ review.score_total }}
+
+	<br>
+
+	Moshability: {{ review.mosh }}
+	Vocals: {{ review.vocals }}
+	Riff: {{ review.riff }}
+	Bass: {{ review.bass }}
+	Beat: {{ review.beat }}
+
+	<br>
+
+	Comments:
+	<br>
+	{{ review.review_text }}
+{% endfor %}
+
 {% endblock body_content %}

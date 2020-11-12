@@ -46,7 +46,8 @@ def addReview(songID):
 @app.route('/song-details/<int:songID>')
 def viewSong(songID):
     song_viewed = Song.query.get(songID)
-    return render_template('song-details.html', song_viewed=song_viewed)
+    song_reviews = Review.query.filter_by(song_id=songID)
+    return render_template('song-details.html', song_viewed=song_viewed, song_reviews=song_reviews)
 
 @app.route('/edit-song/<int:songID>', methods=['GET', 'POST'])
 def editSong(songID):
