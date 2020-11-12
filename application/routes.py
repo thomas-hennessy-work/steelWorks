@@ -26,7 +26,12 @@ def addSong():
         return redirect(url_for('index'))
     return render_template('add-song.html', form=form)
 
-@app.route('/song-details/<int:songID>', methods=['GET', 'POST'])
+@app.route('/song-details/<int:songID>')
 def viewSong(songID):
     song_viewed = Song.query.get(songID)
     return render_template('song-details.html', song_viewed=song_viewed)
+
+@app.route('/edit-song/<int:songID>', methods=['GET', 'POST'])
+def editSong(songID):
+    song_viewed = Song.query.get(songID)
+    return render_template('edit-song.html', song_to_edit=song_viewed)
