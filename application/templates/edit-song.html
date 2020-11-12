@@ -1,1 +1,53 @@
-edit this song
+{% extends 'layout.html' %}
+{% block body_content %}
+
+<h2>Edit song</h2>
+
+<form method='POST' action=''>
+	{{ form.hidden_tag() }}
+
+	{{ form.title.label }} {{ form.title }}
+	{% if form.title %}
+		{% for error in form.title.errors %}
+			<br>
+			{{ error }}
+		{% endfor %}
+	{% endif %}
+
+	<br>
+
+	{{ form.group.label }} {{ form.group }}
+        {% if form.group %}
+                {% for error in form.group.errors %}
+                        <br>
+                        {{ error }}
+                {% endfor %}
+        {% endif %}
+
+	<br>
+
+	{{ form.length.label }} {{ form.length }}
+        {% if form.length %}
+                {% for error in form.length.errors %}
+                        <br>
+                        {{ error }}
+                {% endfor %}
+        {% endif %}
+
+	<br>
+
+	{{ form.youTube.label }} {{ form.youTube }}
+        {% if form.youTube %}
+                {% for error in form.youTube.errors %}
+                        <br>
+                        {{ error }}
+                {% endfor %}
+        {% endif %}
+
+	<br>
+
+	{{ form.submit }}
+
+</form>
+
+{% endblock body_content %}

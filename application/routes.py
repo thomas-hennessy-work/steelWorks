@@ -1,4 +1,4 @@
-from flask import render_template, url_for, redirect
+from flask import render_template, url_for, redirect, request
 
 #importing the app and the linked database created in the initialisation file
 from application import app, db
@@ -33,5 +33,22 @@ def viewSong(songID):
 
 @app.route('/edit-song/<int:songID>', methods=['GET', 'POST'])
 def editSong(songID):
-    song_viewed = Song.query.get(songID)
-    return render_template('edit-song.html', song_to_edit=song_viewed)
+    form = SongForm()
+    #Stros the id and then updated data can be added before commiting
+    song_to_update = Song.query.get(songID)
+    if form.validate_on_submit():
+        #Reading the data provided in the form
+        song_to_update.title = form.title.data
+        song_to_update.group = form.group.data
+        song_to_update.length = form.length.data
+        song_to_update.yt_link = form.youTube.data
+        db.session.commit()
+        return redirect(url_for('viewSong', songID=songID))
+    elif request.method == 'GET':
+        #Prefill the information in the form
+        form.title.data = song_to_update.title
+        form.group.data = song_to_update.group 
+        form.length.data = song_to_update.length
+        form.youTube.data = song_to_update.yt_link
+
+    return render_template('edit-song.html', song_to_update=song_to_update, form=form)
