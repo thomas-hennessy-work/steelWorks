@@ -52,3 +52,10 @@ def editSong(songID):
         form.youTube.data = song_to_update.yt_link
 
     return render_template('edit-song.html', song_to_update=song_to_update, form=form)
+
+@app.route('/delete-song/<int:songID>')
+def deleteSong(songID):
+    song_to_delete = Song.query.get(songID)
+    db.session.delete(song_to_delete)
+    db.session.commit()
+    return redirect(url_for('index'))
