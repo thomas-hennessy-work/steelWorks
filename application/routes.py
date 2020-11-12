@@ -74,6 +74,9 @@ def editSong(songID):
 @app.route('/delete-song/<int:songID>')
 def deleteSong(songID):
     song_to_delete = Song.query.get(songID)
+    reviews_to_delete = Review.query.filter_by(song_id=song_to_delete.song_id)
+    for review in reviews_to_delete:
+        db.session.delete(review)
     db.session.delete(song_to_delete)
     db.session.commit()
     return redirect(url_for('index'))
