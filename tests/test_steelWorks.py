@@ -1,14 +1,18 @@
-import unittest from flask import url_for
+import unittest 
+from flask import url_for
 from flask_testing import TestCase
 
-from app import app, db
+from application import app, db
 from application.routes import index
 from application.models import Song
+
+from os import getenv
 
 class TestBase(TestCase):
     def create_app(self):
 
-        app.config.update(SQLALCHEMY_DATABASE_URI=getenv('DB_URI'),
+        #Used to connect to the test database rather than the live one (steelWorksTests)
+        app.config.update(SQLALCHEMY_DATABASE_URI=getenv('DB_URI_TEST'),
                 SECRET_KEY=getenv('SECRET_KEY'),
                 DEBUG=True
                 )
@@ -28,3 +32,14 @@ class TestBase(TestCase):
     def tearDown(self):
         db.session.remove()
         db.drop_all()
+
+
+
+
+
+
+class TestViews(TestBase):
+    
+    def test_home_get(self):
+        responce = self.client.get(url_for('index'))
+        self.assertEqual(responce.status_code, 200)
