@@ -106,9 +106,11 @@ class TestAdd(TestBase):
                 data = dict(title="Redfog",
                             group="Orbit culture",
                             length=358,
-                            yt_link="https://www.youtube.com/embed/la21crvpjpk")
+                            youTube="https://www.youtube.com/embed/la21crvpjpk")
                 )
         #Needs a bytes type object, hence the b
+        print("responce data")
+        print(responce.data)
         self.assertIn(b"Redfog",responce.data)
         self.assertIn(b"Orbit culture",responce.data)
         self.assertIn(b"358",responce.data)
