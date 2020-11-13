@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
-    <title>Coverage for tests/test_steelWorks.py: 95%</title>
+    <title>Coverage for tests/test_steelWorks.py: 97%</title>
     <link rel="stylesheet" href="style.css" type="text/css">
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="jquery.hotkeys.js"></script>
@@ -17,13 +17,13 @@
 <div id="header">
     <div class="content">
         <h1>Coverage for <b>tests/test_steelWorks.py</b> :
-            <span class="pc_cov">95%</span>
+            <span class="pc_cov">97%</span>
         </h1>
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
         <h2 class="stats">
-            62 statements &nbsp;
-            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">59 run</button>
-            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">3 missing</button>
+            64 statements &nbsp;
+            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">62 run</button>
+            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">2 missing</button>
             <button type="button" class="exc show_exc shortkey_x button_toggle_exc" title="Toggle lines excluded">0 excluded</button>
         </h2>
     </div>
@@ -159,20 +159,22 @@
     <p id="t106" class="pln"><span class="n"><a href="#t106">106</a></span><span class="t">                <span class="nam">data</span> <span class="op">=</span> <span class="nam">dict</span><span class="op">(</span><span class="nam">title</span><span class="op">=</span><span class="str">"Redfog"</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p id="t107" class="pln"><span class="n"><a href="#t107">107</a></span><span class="t">                            <span class="nam">group</span><span class="op">=</span><span class="str">"Orbit culture"</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p id="t108" class="pln"><span class="n"><a href="#t108">108</a></span><span class="t">                            <span class="nam">length</span><span class="op">=</span><span class="num">358</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t109" class="pln"><span class="n"><a href="#t109">109</a></span><span class="t">                            <span class="nam">yt_link</span><span class="op">=</span><span class="str">"https://www.youtube.com/embed/la21crvpjpk"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t109" class="pln"><span class="n"><a href="#t109">109</a></span><span class="t">                            <span class="nam">youTube</span><span class="op">=</span><span class="str">"https://www.youtube.com/embed/la21crvpjpk"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t110" class="pln"><span class="n"><a href="#t110">110</a></span><span class="t">                <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t111" class="pln"><span class="n"><a href="#t111">111</a></span><span class="t">        <span class="com">#Needs a bytes type object, hence the b</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t112" class="run"><span class="n"><a href="#t112">112</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertIn</span><span class="op">(</span><span class="str">b"Redfog"</span><span class="op">,</span><span class="nam">responce</span><span class="op">.</span><span class="nam">data</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t113" class="run"><span class="n"><a href="#t113">113</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertIn</span><span class="op">(</span><span class="str">b"Orbit culture"</span><span class="op">,</span><span class="nam">responce</span><span class="op">.</span><span class="nam">data</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t114" class="run"><span class="n"><a href="#t114">114</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertIn</span><span class="op">(</span><span class="nam">b</span><span class="op">(</span><span class="num">358</span><span class="op">)</span><span class="op">,</span><span class="nam">responce</span><span class="op">.</span><span class="nam">data</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t115" class="mis show_mis"><span class="n"><a href="#t115">115</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertIn</span><span class="op">(</span><span class="str">b"https://www.youtube.com/embed/la21crvpjpk"</span><span class="op">,</span><span class="nam">responce</span><span class="op">.</span><span class="nam">data</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t116" class="pln"><span class="n"><a href="#t116">116</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t112" class="run"><span class="n"><a href="#t112">112</a></span><span class="t">        <span class="nam">print</span><span class="op">(</span><span class="str">"responce data"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t113" class="run"><span class="n"><a href="#t113">113</a></span><span class="t">        <span class="nam">print</span><span class="op">(</span><span class="nam">responce</span><span class="op">.</span><span class="nam">data</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t114" class="run"><span class="n"><a href="#t114">114</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertIn</span><span class="op">(</span><span class="str">b"Redfog"</span><span class="op">,</span><span class="nam">responce</span><span class="op">.</span><span class="nam">data</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t115" class="run"><span class="n"><a href="#t115">115</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertIn</span><span class="op">(</span><span class="str">b"Orbit culture"</span><span class="op">,</span><span class="nam">responce</span><span class="op">.</span><span class="nam">data</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t116" class="run"><span class="n"><a href="#t116">116</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertIn</span><span class="op">(</span><span class="str">b"358"</span><span class="op">,</span><span class="nam">responce</span><span class="op">.</span><span class="nam">data</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t117" class="run"><span class="n"><a href="#t117">117</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertIn</span><span class="op">(</span><span class="str">b"https://www.youtube.com/embed/la21crvpjpk"</span><span class="op">,</span><span class="nam">responce</span><span class="op">.</span><span class="nam">data</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t118" class="pln"><span class="n"><a href="#t118">118</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
 </div>
 <div id="footer">
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.3</a>,
-            created at 2020-11-13 11:45 +0000
+            created at 2020-11-13 13:00 +0000
         </p>
     </div>
 </div>

@@ -99,7 +99,7 @@ class TestViews(TestBase):
 
 
 
-class TestAdd(TestBase):
+class TestSongCRUD(TestBase):
 
     def test_add_song(self):
         responce = self.client.post(url_for('addSong'),
@@ -109,10 +109,20 @@ class TestAdd(TestBase):
                             youTube="https://www.youtube.com/embed/la21crvpjpk")
                 )
         #Needs a bytes type object, hence the b
-        print("responce data")
-        print(responce.data)
         self.assertIn(b"Redfog",responce.data)
         self.assertIn(b"Orbit culture",responce.data)
         self.assertIn(b"358",responce.data)
         self.assertIn(b"https://www.youtube.com/embed/la21crvpjpk",responce.data)
 
+    def test_update_song(self):
+        songID=1
+        responce = self.client.post(url_for('editSong', songID=songID),
+                data = dict(title="Retrospection",
+                            group="Jinjer",
+                            length=294,
+                            youTube="https://www.youtube.com/embed/Wh2yOebcENM")
+                )
+        self.assertIn(b"Retrospection",responce.data)
+        self.assertIn(b"Jinjer",responce.data)
+        self.assertIn(b"294",responce.data)
+        self.assertIn(b"https://www.youtube.com/embed/Wh2yOebcENM",responce.data)
