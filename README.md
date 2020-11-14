@@ -28,9 +28,14 @@ The application is tested using unit tests. The tests currently cover 86% of the
 ### Testing coverage
 ![Image of pytest coverage for the application](images/testing.jpg)
 
+## Build server
+The application is run on a Jenkins server obtaining the source code via GitHub. The server takes the source code, ensures it can be run and produces a software artefact in the form of a build of the software.
+### Build server
+![Build server producing builds](images/buildServer.jpg)
 ## Future improvements
 
  1. The website would benefit from CSS stylings to improve the layout and readability
  2. Adding sanitization to inputted video URL's would allow users to input the first URL to the video they find, making the website easier to use.
  3. Adding a user feature so that added reviews can be contributed to a person.
+ 4. After the build server ensures the application is able to run, it should automatically stop the application rather than needing manual intervention.
 
