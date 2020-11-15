@@ -19,6 +19,7 @@ This application has used the following tools during development:
 ### Required installations
 The dependencies required for the application can be installed using [pip](https://pip.pypa.io/en/stable/) in conjunction with the requirements document.
 `pip install -r requierments.txt`
+Additionally python3 will need to be installed.
 
 ## Accessing the website
 
@@ -27,7 +28,7 @@ The website is accessible via Gunicorn via the IP address and port number of the
 Once the script is run, the application will be accessible from the local host on port 5000.
 
 ## Testing
-The application is tested using unit tests. The tests currently cover 86% of the code written for this application, as determined by pyTest-cov The coverage is shown by the image at the bottom of this section. The environment setup for the unit tests allow them to connect to the same SQL server the live application connects to.
+The application is tested using unit tests. The tests currently cover 86% of the code written for this application, as determined by pyTest-cov The coverage is shown by the image at the bottom of this section. The environment setup for the unit tests allow them to connect to the same SQL server the live application connects to. The test covers the init, forms, models and routes files. Templates are out of scope for Unit testing due to their primarily graphical purpose, though connections to the pages are tested.
 ### Testing coverage
 ![Image of pytest coverage for the application](images/testing.jpg)
 
