@@ -8,6 +8,7 @@ This application has used the following tools during development:
  - Flask
  - Python
  - PYTest
+ - PYTest-cov
  - WTForms
  - Google cloud platform
  - SQL
@@ -26,7 +27,7 @@ The website is accessible via Gunicorn via the IP address and port number of the
 Once the script is run, the application will be accessible from the local host on port 5000.
 
 ## Testing
-The application is tested using unit tests. The tests currently cover 86% of the code written by this application, as shown by the image at the bottom of this section. The environment setup for the unit tests allow them to connect to the same SQL server the live application connects to.
+The application is tested using unit tests. The tests currently cover 86% of the code written for this application, as determined by pyTest-cov The coverage is shown by the image at the bottom of this section. The environment setup for the unit tests allow them to connect to the same SQL server the live application connects to.
 ### Testing coverage
 ![Image of pytest coverage for the application](images/testing.jpg)
 
