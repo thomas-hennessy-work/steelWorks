@@ -1,0 +1,36 @@
+#https://kubernetes.io/blog/2019/07/23/get-started-with-kubernetes-using-python/
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: steelworksservice
+# spec:
+#   selector:
+#     app: app
+#   ports:
+#   - protocol: "TCP"
+#     port: 5000
+#     port: 5000
+#   type: LoadBalancer
+
+# ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: steelworks-deployment
+  labels: 
+    app: sw
+spec:
+  selector:
+    matchLabels:
+      app: sw
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: sw
+    spec:
+      containers:
+      - name: steelworks
+        image: thomashennessy/steel-works
+        ports:
+        - containerPort: 5000
